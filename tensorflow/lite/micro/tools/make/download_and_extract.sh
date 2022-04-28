@@ -151,7 +151,12 @@ download_and_extract() {
   elif [[ "${url}" == *bz2 ]]; then
     curl -Ls "${url}" > ${tempdir}/tarred.bz2
     tar -C "${dir}" --strip-components=1 -xjf ${tempfile}
-  elif [[ "${url}" == *zip ]]; then
+  else
+    if [[ "${url}" != *zip ]];then
+      cp ${tempfile} ${tempfile}.zip
+      tempfile=${tempfile}.zip
+      echo ${tempfile}
+    fi
     unzip ${tempfile} -d ${tempdir2} 2>&1 1>/dev/null
     # If the zip file contains nested directories, extract the files from the
     # inner directory.
@@ -162,9 +167,6 @@ download_and_extract() {
     else
       cp -R ${tempdir2}/* ${dir}/
     fi
-  else
-    echo "Error unsupported archive type. Failed to extract tool after download."
-    exit 1
   fi
   rm -rf ${tempdir2} ${tempdir}
 

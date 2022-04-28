@@ -49,7 +49,7 @@ if [ -d ${DOWNLOADED_KISSFFT_PATH} ]; then
   echo >&2 "${DOWNLOADED_KISSFFT_PATH} already exists, skipping the download."
 else
 
-  KISSFFT_URL="https://github.com/mborgerding/kissfft/archive/refs/tags/v130.zip"
+  KISSFFT_URL="https://codeload.github.com/mborgerding/kissfft/zip/refs/tags/v130"
   KISSFFT_MD5="438ba1fef5783cc5f5f201395cc477ca"
 
   TEMPDIR="$(mktemp -d)"

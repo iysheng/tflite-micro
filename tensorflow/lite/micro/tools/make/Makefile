@@ -19,6 +19,7 @@ endif
 
 # root directory of tensorflow
 TENSORFLOW_ROOT :=
+# makefile 的目录
 MAKEFILE_DIR := tensorflow/lite/micro/tools/make
 
 # Pull in some convenience functions.
@@ -492,6 +493,7 @@ THIRD_PARTY_DOWNLOADS :=
 $(eval $(call add_third_party_download,$(GEMMLOWP_URL),$(GEMMLOWP_MD5),gemmlowp,))
 $(eval $(call add_third_party_download,$(RUY_URL),$(RUY_MD5),ruy,))
 
+$(info "red" $(THIRD_PARTY_DOWNLOADS) "red")
 # The target-specific makefile must have a name that is exactly
 # TARGET_makefile.inc and is only needed for cross-compilation (i.e. when TARGET
 # is different from the HOST_OS).

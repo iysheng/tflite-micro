@@ -48,7 +48,7 @@ DOWNLOADED_PIGWEED_PATH=${DOWNLOADS_DIR}/pigweed
 if [ -d ${DOWNLOADED_PIGWEED_PATH} ]; then
   echo >&2 "${DOWNLOADED_PIGWEED_PATH} already exists, skipping the download."
 else
-  git clone https://pigweed.googlesource.com/pigweed/pigweed ${DOWNLOADED_PIGWEED_PATH} >&2
+  git clone https://ghproxy.fsofso.com/https://github.com/google/pigweed.git ${DOWNLOADED_PIGWEED_PATH} >&2
   pushd ${DOWNLOADED_PIGWEED_PATH} > /dev/null
 
   git checkout 47268dff45019863e20438ca3746c6c62df6ef09 >&2
